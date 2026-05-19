@@ -504,7 +504,7 @@ tr:nth-child(even){
         type="text"
         id="rude"
         placeholder="Ingrese RUDE"
-        inputmode="numeric"
+        style="text-transform:uppercase"
       >
 
       <button
@@ -590,10 +590,11 @@ function consultar(){
   .trim();
 
   const rude =
-  document
-  .getElementById("rude")
-  .value
-  .trim();
+document
+.getElementById("rude")
+.value
+.trim()
+.toUpperCase();
 
   if(!curso || !rude){
 
