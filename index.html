@@ -708,22 +708,48 @@ function mostrarResultado(data){
 
   data.areas.forEach(a => {
 
+    const nombresAreas = {
+
+      LCO: "Lenguaje y Comunicación",
+      LEX: "Lengua Extranjera",
+      SOC: "Ciencias Sociales",
+      EFD: "Educación Física y Deportes",
+      EMU: "Educación Musical",
+      APV: "Artes Plásticas y Visuales",
+      MAT: "Matemática",
+      TTG: "Técnica Tecnológica General",
+      BIO: "Biología - Geografía",
+      CFS: "Cosmovisiones, Filosofía y Sicología",
+      VER: "Valores, Espiritualidad y Religiones",
+      FIS: "Física",
+      QMC: "Química"
+
+    };
+
     html +=
 
     `
     <tr>
 
       <td>
-        <b>${a.area}</b>
+        <b>${nombresAreas[a.area] || a.area}</b>
       </td>
 
-      <td>${a.t1}</td>
+      <td style="color:${a.t1 < 51 ? '#dc2626' : '#1e293b'}; font-weight:bold;">
+        ${a.t1}
+      </td>
 
-      <td>${a.t2}</td>
+      <td style="color:${a.t2 < 51 ? '#dc2626' : '#1e293b'}; font-weight:bold;">
+        ${a.t2}
+      </td>
 
-      <td>${a.t3}</td>
+      <td style="color:${a.t3 < 51 ? '#dc2626' : '#1e293b'}; font-weight:bold;">
+        ${a.t3}
+      </td>
 
-      <td>${a.anual}</td>
+      <td style="color:${a.anual < 51 ? '#dc2626' : '#1e293b'}; font-weight:bold;">
+        ${a.anual}
+      </td>
 
     </tr>
     `;
